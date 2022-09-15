@@ -1,0 +1,28 @@
+{
+  "name": "cy10jstypescriptcucumber",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "runner": "cypress open --e2e --browser chrome",
+    "runnerSpec": "cypress run --e2e --browser chrome -- record --spec 'cypress/e2e/helloworld.cy.ts' --reporter json"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jm84/cy10JsTypeScriptCucumber.git"
+  },
+  "keywords": [
+    "test",
+    "automation"
+  ],
+  "author": "juan molina",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jm84/cy10JsTypeScriptCucumber/issues"
+  },
+  "homepage": "https://github.com/jm84/cy10JsTypeScriptCucumber#readme",
+  "dependencies": {
+    "cypress": "^10.8.0",
+    "typescript": "^4.8.3"
+  }
+}
