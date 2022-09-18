@@ -5,7 +5,13 @@
   "main": "index.js",
   "scripts": {
     "runner": "cypress open --e2e --browser chrome",
-    "runnerSpec": "cypress run --e2e --browser chrome -- record --spec 'cypress/e2e/helloworld.cy.ts' --reporter json"
+    "cypress:runneropen": "cypress open",
+    "runnerSpec": "cypress run --e2e --browser chrome -- record --spec 'cypress/e2e/helloworld.cy.ts' --reporter json",
+    "cy:run": "cypress run",
+    "cy:run:report": "npm run cy:run && node cucumber-html-report.js",
+    "clean:reports": "(if exist reports (rmdir /Q /S reports))",
+    "clean:jsonlogs": "(if exist jsonlogs (rmdir /Q /S jsonlogs))",
+    "clean:run:report": "npm run clean:reports && npm run clean:jsonlogs && npm run cy:run:report"
   },
   "repository": {
     "type": "git",
@@ -23,6 +29,13 @@
   "homepage": "https://github.com/jm84/cy10JsTypeScriptCucumber#readme",
   "dependencies": {
     "cypress": "^10.8.0",
-    "typescript": "^4.8.3"
+    "typescript": "^4.8.3",
+    "@badeball/cypress-cucumber-preprocessor": "^12.1.0",
+    "@bahmutov/cypress-esbuild-preprocessor": "^2.1.3",
+    "esbuild": "^0.14.48",
+    "multiple-cucumber-html-reporter": "^1.21.4"
+  },
+  "devDependencies": {
+    "cypress-xpath": "^2.0.1"
   }
 }
